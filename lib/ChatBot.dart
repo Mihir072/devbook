@@ -64,13 +64,17 @@ class _ChatBotState extends State<ChatBot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
-        title: const Text('Let’s ask your Questions'),
-        centerTitle: true,
-        backgroundColor: barcolor,
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text(
+          'Let’s ask your Questions',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.grey.shade800,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(bottom: 20, left: 5),
+        padding: const EdgeInsets.only(bottom: 20, left: 10),
         child: DashChat(
           typingUsers: typing,
           currentUser: myself,
@@ -87,10 +91,11 @@ class _ChatBotState extends State<ChatBot> {
               alwaysShowSend: true,
               cursorStyle: const CursorStyle(color: Colors.black),
               inputDecoration: InputDecoration(
+                hintText: 'Type you want to know..',
                 fillColor: barcolor,
                 filled: true,
                 border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
               )),
         ),
       ),
@@ -99,12 +104,9 @@ class _ChatBotState extends State<ChatBot> {
 
   Widget yourAvtarBuilder(
       ChatUser user, Function? onAvtarTap, Function? onAvtarLongPress) {
-    return Center(
-      child: Image.asset(
-        'asset/images/woman.png',
-        height: 30,
-        width: 30,
-      ),
+    return const CircleAvatar(
+      backgroundImage: AssetImage('asset/images/woman.png'),
+      radius: 15,
     );
   }
 }

@@ -10,7 +10,77 @@ List<user> newUser = [
   ),
   user(
     id: 1,
-    question: 'What is Dart?',
+    question: 'What is Dart Language?',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 2,
+    question: 'How do you install Flutter',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 3,
+    question: 'How do you set up an Android Emulator',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 4,
+    question: 'How do you create a new Flutter project',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 5,
+    question: 'How do you run a Flutter application',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 6,
+    question: 'What are widgets in Flutter?',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 7,
+    question: 'What is the stateless and stateful widgets?',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 8,
+    question: 'How do you use common layout widgets',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 9,
+    question: 'How do you apply styles to widgets',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 10,
+    question: 'How do you use TextField and TextFormField for input',
+    videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
+    answer:
+        'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',
+  ),
+  user(
+    id: 11,
+    question: 'What are controllers?',
     videoPath: 'https://youtu.be/fnpD5NCzIIo?si=vXp96YlxHesS8S19',
     answer:
         'Dart is an open-source, general-purpose programming language developed by Google. It is designed for building fast, scalable, and high-performance applications across various platforms, including web, mobile, and desktop. Dart is an object-oriented, class-based language with a syntax similar to C, making it easy to learn for developers familiar with languages like Java or JavaScript. One of Dart’s standout features is its ability to compile to native machine code, JavaScript, or WebAssembly, ensuring optimal performance on any platform. \nDart is particularly well-known for its integration with the Flutter framework, which is used to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. This integration allows developers to create expressive and flexible UIs with a rich set of customizable widgets. ',

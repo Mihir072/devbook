@@ -1,32 +1,46 @@
 import "package:devbook/ChatBot.dart";
-import "package:devbook/Data/flutter_data.dart";
-import "package:devbook/config/colors.dart";
-import "package:devbook/pages/flutterMenu.dart";
-import "package:flutter/cupertino.dart";
+import "package:devbook/pages/flutterAns.dart";
 import "package:flutter/material.dart";
-import "package:flutter/widgets.dart";
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
   @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey.shade900,
         appBar: AppBar(
-          title: const Text('Dev Leaning'),
+          title: const Text(
+            'Dev Book',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
           centerTitle: true,
-          backgroundColor: barcolor,
+          backgroundColor: Colors.grey.shade800,
         ),
         body: SafeArea(
           child: Padding(
-            padding:
-                const EdgeInsets.only(top: 10, right: 20, left: 20, bottom: 10),
+            padding: const EdgeInsets.only(
+              top: 10,
+              right: 20,
+              left: 20,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
                   "Hey Learners,",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
@@ -36,7 +50,7 @@ class Homepage extends StatelessWidget {
                       color: Colors.amber.shade100,
                       borderRadius: BorderRadius.circular(16)),
                   child: Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -62,7 +76,8 @@ class Homepage extends StatelessWidget {
                             SizedBox(
                               height: 10,
                               child: Container(
-                                decoration: BoxDecoration(color: Colors.black),
+                                decoration:
+                                    const BoxDecoration(color: Colors.black),
                               ),
                             ),
                           ],
@@ -73,7 +88,8 @@ class Homepage extends StatelessWidget {
                         SizedBox(
                           height: 1,
                           child: Container(
-                            decoration: BoxDecoration(color: Colors.black),
+                            decoration:
+                                const BoxDecoration(color: Colors.black),
                           ),
                         ),
                         const Text(
@@ -99,12 +115,12 @@ class Homepage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const FlutterMenu()));
+                            builder: (context) => const FlutterAns()));
                   },
                   child: Container(
                     decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 207, 231, 241),
-                        borderRadius: BorderRadius.circular(216)),
+                        borderRadius: BorderRadius.circular(16)),
                     child: const Padding(
                       padding: EdgeInsets.all(10),
                       child: Row(
@@ -129,7 +145,7 @@ class Homepage extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 217, 203, 241),
-                      borderRadius: BorderRadius.circular(216)),
+                      borderRadius: BorderRadius.circular(16)),
                   child: const Padding(
                     padding: EdgeInsets.all(10),
                     child: Row(
@@ -153,7 +169,7 @@ class Homepage extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 240, 190, 175),
-                      borderRadius: BorderRadius.circular(216)),
+                      borderRadius: BorderRadius.circular(16)),
                   child: const Padding(
                     padding: EdgeInsets.all(10),
                     child: Row(
@@ -177,7 +193,12 @@ class Homepage extends StatelessWidget {
                 Center(
                   child: Column(
                     children: [
-                      const Text("Lets's talk with Our AI ChatBot"),
+                      const Text(
+                        "Lets's talk with Our AI ChatBot",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                       const SizedBox(
                         height: 15,
                       ),
@@ -186,14 +207,18 @@ class Homepage extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ChatBot()));
+                                  builder: (context) => const ChatBot()));
                         },
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.black,
+                          backgroundColor: Colors.white,
                         ),
-                        child: const Text('Click Here'),
-                      )
+                        child: const Text(
+                          'Click Here',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),

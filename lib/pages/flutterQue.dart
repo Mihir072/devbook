@@ -1,94 +1,92 @@
-import 'package:devbook/Data/user_model.dart';
-import 'package:devbook/config/colors.dart';
-import 'package:flutter/material.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+// import 'package:devbook/Data/flutter_data.dart';
+// import 'package:devbook/config/colors.dart';
+// import 'package:devbook/pages/flutterAns.dart';
+// import 'package:flutter/material.dart';
 
-class FlutterQue extends StatefulWidget {
-  final user mihir;
-  const FlutterQue({super.key, required this.mihir});
+// class flutterQue extends StatelessWidget {
+//   const flutterQue({super.key});
 
-  @override
-  State<FlutterQue> createState() => _FlutterQueState();
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.grey.shade900,
+//       appBar: AppBar(
+//         iconTheme: const IconThemeData(color: Colors.white),
+//         title: Text(
+//           'Flutter Development',
+//           style: TextStyle(color: Colors.grey.shade100),
+//         ),
+//         backgroundColor: Colors.grey.shade800,
+//       ),
+//       body: SafeArea(
+//         child: Padding(
+//           padding:
+//               const EdgeInsets.only(top: 10, right: 20, left: 20, bottom: 10),
+//           child: Column(
+//             children: [
+//               ClipRRect(
+//                   borderRadius: BorderRadius.circular(16),
+//                   child: const Image(
+//                       image: AssetImage('asset/images/flutterimg.png'))),
+//               const SizedBox(height: 20),
 
-class _FlutterQueState extends State<FlutterQue> {
-  late String videoURL;
-  late YoutubePlayerController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    videoURL = widget.mihir.videoPath;
-    final videoID = YoutubePlayer.convertUrlToId(videoURL);
-
-    _controller = YoutubePlayerController(
-      initialVideoId: videoID!,
-      flags: const YoutubePlayerFlags(
-        autoPlay: false,
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Answer'),
-        centerTitle: true,
-        backgroundColor: barcolor,
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.mihir.question,
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Answer :-',
-                  style: TextStyle(fontSize: 20, color: Colors.blue),
-                ),
-                Text(
-                  widget.mihir.answer,
-                  style: const TextStyle(fontSize: 17),
-                ),
-                const SizedBox(height: 25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Let's see ",
-                      style: TextStyle(fontSize: 17),
-                    ),
-                    Text(
-                      widget.mihir.question,
-                      style: const TextStyle(fontSize: 17),
-                    ),
-                    const SizedBox(height: 15),
-                  ],
-                ),
-                // Ensure the YoutubePlayer is properly constrained
-                Container(
-                  constraints: BoxConstraints(
-                    maxHeight: 300, // Adjust height as needed
-                  ),
-                  child: YoutubePlayer(
-                    controller: _controller,
-                    showVideoProgressIndicator: true,
-                  ),
-                ),
-                const SizedBox(height: 20),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//               // LIST START FROM HERE..
+//               Expanded(
+//                 child: ListView.builder(
+//                   itemCount: newUser.length,
+//                   itemBuilder: (context, index) {
+//                     return GestureDetector(
+//                       onTap: () {
+//                         Navigator.push(
+//                           context,
+//                           MaterialPageRoute(
+//                             builder: (context) =>
+//                                 FlutterAns(mihir: newUser[index]),
+//                           ),
+//                         );
+//                       },
+//                       child: Container(
+//                         decoration: BoxDecoration(
+//                           color: const Color.fromARGB(255, 207, 231, 241),
+//                           borderRadius: BorderRadius.circular(16),
+//                         ),
+//                         margin: const EdgeInsets.only(bottom: 10),
+//                         child: Padding(
+//                           padding: const EdgeInsets.all(10),
+//                           child: Row(
+//                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                             children: [
+//                               Expanded(
+//                                 child: Text(
+//                                   newUser[index].question,
+//                                   style: const TextStyle(
+//                                     fontSize: 15,
+//                                     fontWeight: FontWeight.w500,
+//                                   ),
+//                                   overflow: TextOverflow
+//                                       .ellipsis, // Added for text overflow handling
+//                                 ),
+//                               ),
+//                               Container(
+//                                   width: 30,
+//                                   decoration: const BoxDecoration(
+//                                       color: Colors.white,
+//                                       borderRadius:
+//                                           BorderRadius.all(Radius.circular(8))),
+//                                   child:
+//                                       const Icon(Icons.arrow_forward_rounded))
+//                             ],
+//                           ),
+//                         ),
+//                       ),
+//                     );
+//                   },
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
