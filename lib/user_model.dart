@@ -2,7 +2,6 @@ class user {
   final int id;
   final String question;
   final String videoPath;
-
   final String answer;
 
   user({

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:devbook/config/colors.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +23,44 @@ class _ChatBotState extends State<ChatBot> {
 
   final header = {'Content-Type': 'application/json'};
 
+  // Function to parse bold markdown syntax (**text**) into bold TextSpan
+  TextSpan parseMarkdown(String text, {Color? color}) {
+    final boldRegex = RegExp(r"\*\*(.*?)\*\*"); // Detects **bold** text
+    List<TextSpan> spans = [];
+    int lastIndex = 0;
+
+    // Find all occurrences of bold text
+    for (final match in boldRegex.allMatches(text)) {
+      // Add the text before the bold part
+      if (match.start > lastIndex) {
+        spans.add(TextSpan(
+            text: text.substring(lastIndex, match.start),
+            style: TextStyle(color: color)));
+      }
+
+      // Add the bold text
+      spans.add(TextSpan(
+        text: match.group(1),
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: color), // Apply color to bold text
+      ));
+
+      // Update lastIndex to continue after the current match
+      lastIndex = match.end;
+    }
+
+    // Add any remaining text after the last match
+    if (lastIndex < text.length) {
+      spans.add(TextSpan(
+          text: text.substring(lastIndex),
+          style: TextStyle(color: color))); // Apply color
+    }
+
+    return TextSpan(children: spans);
+  }
+
+  // Get data from API and handle the bot response
   getdata(ChatMessage m) async {
     typing.add(bot);
     allMessages.insert(0, m);
@@ -45,18 +82,24 @@ class _ChatBotState extends State<ChatBot> {
         .then((value) {
       if (value.statusCode == 200) {
         var result = jsonDecode(value.body);
-        print(result['candidates'][0]['content']['parts'][0]['text']);
+        String botResponse =
+            result['candidates'][0]['content']['parts'][0]['text'];
 
+        // Creating the bot message
         ChatMessage m1 = ChatMessage(
-            text: result['candidates'][0]['content']['parts'][0]['text'],
-            user: bot,
-            createdAt: DateTime.now());
+          text: botResponse,
+          user: bot,
+          createdAt: DateTime.now(),
+        );
 
         allMessages.insert(0, m1);
       } else {
-        print("error occured");
+        print("error occurred");
       }
-    }).catchError((e) {});
+    }).catchError((e) {
+      print(e);
+    });
+
     typing.remove(bot);
     setState(() {});
   }
@@ -64,14 +107,26 @@ class _ChatBotState extends State<ChatBot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: cream,
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          'Let’s ask your Questions',
-          style: TextStyle(color: Colors.white),
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Let’s ask your Questions',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            Hero(
+              tag: 'tag',
+              child: CircleAvatar(
+                backgroundImage: AssetImage('asset/images/woman.png'),
+                radius: 18,
+              ),
+            ),
+          ],
         ),
-        backgroundColor: Colors.grey.shade800,
+        backgroundColor: bgcolor,
       ),
       body: Padding(
         padding: const EdgeInsets.only(bottom: 20, left: 10),
@@ -83,27 +138,43 @@ class _ChatBotState extends State<ChatBot> {
           },
           messages: allMessages,
           messageOptions: MessageOptions(
-            currentUserContainerColor: barcolor,
-            currentUserTextColor: Colors.black,
-            avatarBuilder: yourAvtarBuilder,
+            currentUserContainerColor: Colors.grey.shade800,
+            currentUserTextColor: Colors.white,
+            avatarBuilder: yourAvatarBuilder,
+            messageTextBuilder: (ChatMessage message,
+                [ChatMessage? previousMessage, ChatMessage? nextMessage]) {
+              // Determine text color based on the message sender
+              Color textColor = message.user.id == myself.id
+                  ? Colors.white
+                  : Colors.black; // Black for user, blue for bot
+
+              return RichText(
+                text: parseMarkdown(message.text,
+                    color: textColor), // Pass the color to parseMarkdown
+              );
+            },
           ),
           inputOptions: InputOptions(
-              alwaysShowSend: true,
-              cursorStyle: const CursorStyle(color: Colors.black),
-              inputDecoration: InputDecoration(
-                hintText: 'Type you want to know..',
-                fillColor: barcolor,
-                filled: true,
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-              )),
+            alwaysShowSend: true,
+            cursorStyle: const CursorStyle(color: Colors.black),
+            inputDecoration: InputDecoration(
+              hintText: 'Type you want to know..',
+              fillColor: Colors.white,
+              filled: true,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide.none,
+              ),
+            ),
+          ),
         ),
       ),
     );
   }
 
-  Widget yourAvtarBuilder(
-      ChatUser user, Function? onAvtarTap, Function? onAvtarLongPress) {
+  // Avatar builder for displaying user and bot avatars
+  Widget yourAvatarBuilder(
+      ChatUser user, Function? onAvatarTap, Function? onAvatarLongPress) {
     return const CircleAvatar(
       backgroundImage: AssetImage('asset/images/woman.png'),
       radius: 15,
